@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 
 def raise_exception():
-    raise TypeError("An intentional type exception has been raised.")
-
-
-raise TypeError
+    """An intentional type exception has been raised"""
+    raise TypeError
