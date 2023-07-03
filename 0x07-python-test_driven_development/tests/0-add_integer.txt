@@ -1,5 +1,7 @@
+# 0-add_integer.txt
+
 =================================
-Test cases a function that adds 2 integers
+Test cases for a function that adds 2 integers
 =================================
 
 This module defines the function `add_integer(a, b=98)`.
