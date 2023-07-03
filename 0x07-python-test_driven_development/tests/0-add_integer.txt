@@ -1,0 +1,78 @@
+def add_integer(a, b=98):
+    """
+    Adds two integers.
+
+    Args:
+        a (int or float): The first number.
+        b (int or float, optional): The second number. Defaults to 98.
+
+    Returns:
+        int: The addition of a and b.
+
+    Raises:
+        TypeError: If a or b is not an integer or float.
+
+    """
+
+    if not isinstance(a, (int, float)):
+        raise TypeError("a must be an integer or float")
+    if not isinstance(b, (int, float)):
+        raise TypeError("b must be an integer or float")
+
+    return int(a) + int(b)
+
+
+if __name__ == "__main__":
+    print(add_integer(2, 3))  # 5
+    print(add_integer(2, -3))  # -1
+    print(add_integer(2.0, 3.0))  # 5
+    print(add_integer(2.9, 0.2))  # 2
+    print(add_integer(-2.9, -0.2))  # -2
+    print(add_integer(2.3, -3))  # -1
+    print(add_integer(2))  # 100
+
+    try:
+        print(add_integer("hello", 3))
+    except TypeError as e:
+        print(e)  # a must be an integer
+
+    try:
+        print(add_integer(2, "hello"))
+    except TypeError as e:
+        print(e)  # b must be an integer
+
+    try:
+        print(add_integer(None))
+    except TypeError as e:
+        print(e)  # a must be an integer
+
+    try:
+        print(add_integer(2.3, None))
+    except TypeError as e:
+        print(e)  # b must be an integer
+
+    try:
+        print(add_integer("hello", "there"))
+    except TypeError as e:
+        print(e)  # a must be an integer
+
+    try:
+        print(add_integer(float("inf")))
+    except OverflowError as e:
+        print(e)  # cannot convert float infinity to integer
+
+    try:
+        print(add_integer(2, float("inf")))
+    except OverflowError as e:
+        print(e)  # cannot convert float infinity to integer
+
+    try:
+        print(add_integer(float("nan")))
+    except ValueError as e:
+        print(e)  # cannot convert float NaN to integer
+
+    try:
+        print(add_integer(2, float("nan")))
+    except ValueError as e:
+        print(e)  # cannot convert float NaN to integer
+
