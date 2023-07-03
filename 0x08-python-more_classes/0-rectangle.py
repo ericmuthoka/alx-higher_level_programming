@@ -1,10 +1,6 @@
 #!/usr/bin/python3
+"""A class that defines a rectangle"""
 
 class Rectangle:
-    """
-    Rectangle class represents a rectangle.
-
-    Attributes:
-        No attributes defined.
-    """
+    """An empty class that representing rectangle"""
     pass
