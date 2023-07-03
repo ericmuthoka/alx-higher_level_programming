@@ -4,7 +4,7 @@
 Test cases for text_indentation
 =================================
 
->>> text_indentation = __import__('4-text_indentation').text_indentation
+>>> text_indentation = __import__('5-text_indentation').text_indentation
 
 # Valid text with punctuation characters
 >>> text_indentation("Hello?")
@@ -94,4 +94,4 @@ TypeError: text must be a string
 >>> text_indentation(None)
 Traceback (most recent call last):
     ...
-TypeError: text must be
+TypeError: text must be a string
