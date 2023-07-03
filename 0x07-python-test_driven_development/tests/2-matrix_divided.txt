@@ -1,0 +1,58 @@
+=====================================
+Test cases for the matrix_divided function
+=====================================
+
+This module defines the function `matrix_divided(matrix, div)`.
+The function divides all elements of a matrix by a given divisor.
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Dividing each element of a 2x2 matrix by 2:
+>>> matrix = [[4, 8], [12, 16]]
+>>> div = 2
+>>> matrix_divided(matrix, div)
+[[2.0, 4.0], [6.0, 8.0]]
+
+Dividing each element of a 3x3 matrix by 3:
+>>> matrix = [[9, 18, 27], [36, 45, 54], [63, 72, 81]]
+>>> div = 3
+>>> matrix_divided(matrix, div)
+[[3.0, 6.0, 9.0], [12.0, 15.0, 18.0], [21.0, 24.0, 27.0]]
+
+Dividing each element of a 2x3 matrix by 1.5:
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> div = 1.5
+>>> matrix_divided(matrix, div)
+[[0.67, 1.33, 2.0], [2.67, 3.33, 4.0]]
+
+Attempting to divide a non-matrix (list of lists) by 2:
+>>> matrix = [1, 2, 3]
+>>> div = 2
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Attempting to divide a matrix with rows of different sizes by 3:
+>>> matrix = [[1, 2, 3], [4, 5], [6, 7, 8]]
+>>> div = 3
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+    ...
+TypeError: Each row of the matrix must have the same size
+
+Attempting to divide a matrix by a non-number:
+>>> matrix = [[1, 2], [3, 4]]
+>>> div = "2"
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+    ...
+TypeError: div must be a number
+
+Attempting to divide a matrix by 0:
+>>> matrix = [[1, 2], [3, 4]]
+>>> div = 0
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+    ...
+ZeroDivisionError: division by zero

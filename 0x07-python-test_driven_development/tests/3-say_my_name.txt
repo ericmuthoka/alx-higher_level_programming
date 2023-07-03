@@ -1,0 +1,25 @@
+======================================
+Test cases for the say_my_name function
+======================================
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Printing name with both first name and last name:
+>>> say_my_name("John", "Doe")
+My name is John Doe
+
+Printing name with only first name:
+>>> say_my_name("Alice")
+My name is Alice 
+
+Attempting to print name with non-string first name:
+>>> say_my_name(123, "Smith")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+Attempting to print name with non-string last name:
+>>> say_my_name("Jane", 456)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
