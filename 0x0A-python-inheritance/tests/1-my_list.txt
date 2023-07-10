@@ -1,0 +1,21 @@
+#!/usr/bin/python3
+"""Test cases for MyList class."""
+
+import unittest
+from mylist import MyList
+
+
+class TestMyList(unittest.TestCase):
+    """Define test cases for MyList class."""
+
+    def test_print_sorted(self):
+        """Test the print_sorted method."""
+        my_list = MyList([5, 2, 8, 1, 9, 3])
+        expected_output = "[1, 2, 3, 5, 8, 9]"
+        with patch("builtins.print") as mock_print:
+            my_list.print_sorted()
+            mock_print.assert_called_with(expected_output)
+
+
+if __name__ == '__main__':
+    unittest.main()
