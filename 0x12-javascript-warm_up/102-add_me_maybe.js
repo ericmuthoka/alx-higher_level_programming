@@ -1,8 +1,9 @@
-#!/usr/bin/node
-
-function addMeMaybe(number, theFunction) {
-  number++;
+function incrementAndCall(number, theFunction) {
+  number += 1;
   theFunction(number);
 }
 
-module.exports.addMeMaybe = addMeMaybe; // Export the function
+// Example usage:
+incrementAndCall(4, function (nb) {
+  console.log('New value: ' + nb);
+});
