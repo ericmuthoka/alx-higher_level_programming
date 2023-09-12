@@ -1,7 +1,9 @@
-class Rectangle {
-  // Class methods and properties can be added here
-}
+#!/usr/bin/node
+/**
+ * @class
+ * Represents a rectangle.
+ */
+class Rectangle {}
 
-// Usage example:
-// const myRectangle = new Rectangle();
+module.exports = Rectangle;
 
