@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This script connects to a MySQL database and lists all states from the 'states' table in ascending order of their IDs.
+This script connects to a MySQL database and lists all states from the 'states'
+table in ascending order of their IDs.
 """
 
 import sys
@@ -8,7 +9,8 @@ import MySQLdb
 
 def list_states(username, password, database):
     """
-    Connects to the MySQL server and lists all states from the 'states' table in ascending order of their IDs.
+    Connects to the MySQL server and lists all states from the 'states' table in
+    ascending order of their IDs.
 
     Args:
         username (str): MySQL username.
@@ -20,7 +22,8 @@ def list_states(username, password, database):
     """
     try:
         # Connect to the MySQL server
-        db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=database)
+        db = MySQLdb.connect(host="localhost", port=3306, user=username,
+                             passwd=password, db=database)
         cursor = db.cursor()
 
         # Execute the query to select all states and sort them by id
@@ -40,7 +43,8 @@ def list_states(username, password, database):
 
 if __name__ == "__main__":
     """
-    Main function that takes MySQL username, password, and database name as arguments and calls the list_states function.
+    Main function that takes MySQL username, password, and database name as
+    arguments and calls the list_states function.
     """
     # Check if correct number of arguments is provided
     if len(sys.argv) != 4:
