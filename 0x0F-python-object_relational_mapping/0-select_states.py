@@ -7,9 +7,11 @@ table in ascending order of their IDs.
 import sys
 import MySQLdb
 
+
 def list_states(username, password, database):
     """
-    Connects to the MySQL server and lists all states from the 'states' table in
+    Connects to the MySQL server and lists all states
+    from the 'states' table in
     ascending order of their IDs.
 
     Args:
