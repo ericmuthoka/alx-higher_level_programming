@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-This script changes the name of a State object
-in the database 'hbtn_0e_6_usa'.
+This script changes the name of a State object in the database 'hbtn_0e_6_usa'.
 """
 
 import sys
@@ -22,8 +21,8 @@ if __name__ == "__main__":
 
     # Create the connection string
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
-            .format(username, password, database),
-            pool_pre_ping=True)
+                           .format(username, password, database),
+                           pool_pre_ping=True)
 
     # Create a configured "Session" class
     Session = sessionmaker(bind=engine)
