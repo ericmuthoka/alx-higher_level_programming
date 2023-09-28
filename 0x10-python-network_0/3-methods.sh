@@ -1,5 +1,13 @@
 #!/bin/bash
-# Display the allowed HTTP methods for a server using curl.
+# This script displays all HTTP methods the server will accept for a given URL.
 
-# Send a HEAD request to retrieve the allowed HTTP methods
-curl -sI "$1" | grep "Allow" | cut -d " " -f 2-
+# Check if the user provided a URL
+if [ -z "$1" ]; then
+  echo "Usage: $0 <URL>"
+  exit 1
+fi
+
+# Send an OPTIONS request to the specified URL and display the allowed methods
+allowed_methods=$(curl -sI -X OPTIONS "$1" | awk -F ": " '/Allow/ {print $2}')
+echo "$allowed_methods"
+
