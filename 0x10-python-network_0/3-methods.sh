@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # This script fetches the allowed HTTP methods for a given URL.
 # Usage: ./3-methods.sh <URL>
 
