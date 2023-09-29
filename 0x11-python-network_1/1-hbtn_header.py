@@ -6,6 +6,7 @@ found in the header of the response.
 import urllib.request
 from sys import argv
 
+
 def main(url):
     """
     Sends a request to a URL and displays the value
@@ -15,6 +16,7 @@ def main(url):
     with urllib.request.urlopen(url) as response:
         headers = response.info()
         print(headers['X-Request-Id'])
+
 
 if __name__ == "__main__":
     main(argv[1])
