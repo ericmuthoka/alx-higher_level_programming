@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Fetches the body response from a URL using urllib."""
+
 import urllib.request
 
 if __name__ == "__main__":
