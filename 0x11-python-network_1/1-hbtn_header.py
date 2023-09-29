@@ -1,15 +1,20 @@
 #!/usr/bin/python3
-"""Sends a request to a URL and displays the value of
-the X-Request-Id variable."""
-
+"""
+Displays the value of the X-Request-Id variable
+found in the header of the response.
+"""
 import urllib.request
-import sys
+from sys import argv
+
+def main(url):
+    """
+    Sends a request to a URL and displays the value
+    of the X-Request-Id variable found in the header
+    of the response.
+    """
+    with urllib.request.urlopen(url) as response:
+        headers = response.info()
+        print(headers['X-Request-Id'])
 
 if __name__ == "__main__":
-    url = sys.argv[1]  # Get the URL from the command-line arguments
-
-    # Send a request to the URL
-    with urllib.request.urlopen(url) as response:
-        # Retrieve the value of the X-Request-Id header
-        x_request_id = response.getheader('X-Request-Id')
-        print(x_request_id)
+    main(argv[1])
