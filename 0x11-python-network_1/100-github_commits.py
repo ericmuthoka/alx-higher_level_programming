@@ -27,15 +27,15 @@ def main(argv):
     repo = argv[1]
     owner = argv[2]
     headers = {"Accept": "application/vnd.github.v3+json"}
-    response = requests.get('https://api.github.com/repos/' + owner +
-               '/' + repo + '/commits', headers=headers)
+    url = f'https://api.github.com/repos/{owner}/{repo}/commits'
+    response = requests.get(url, headers=headers)
     commit_list = response.json()
     size = len(commit_list)
     if size < 10:
-        for i in range(0, size):
+        for i in range(size):
             print_commits(i, commit_list)
     else:
-        for i in range(0, 10):
+        for i in range(10):
             print_commits(i, commit_list)
 
 
