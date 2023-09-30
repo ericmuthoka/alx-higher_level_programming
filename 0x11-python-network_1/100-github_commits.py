@@ -14,7 +14,6 @@ def main(argv):
     Usage: ./script.py <repository_name> <owner_name>
     """
 
-
     def print_commits(i, commit_list):
         """
         Prints commit details for up to 10 commits.
@@ -29,7 +28,7 @@ def main(argv):
     owner = argv[2]
     headers = {"Accept": "application/vnd.github.v3+json"}
     response = requests.get('https://api.github.com/repos/' + owner +
-                            '/' + repo + '/commits', headers=headers)
+               '/' + repo + '/commits', headers=headers)
     commit_list = response.json()
     size = len(commit_list)
     if size < 10:
@@ -38,6 +37,7 @@ def main(argv):
     else:
         for i in range(0, 10):
             print_commits(i, commit_list)
+
 
 if __name__ == "__main__":
     main(argv)
