@@ -17,7 +17,16 @@ request.get(apiUrl, (error, response, body) => {
   } else {
     if (response.statusCode === 200) {
       const films = JSON.parse(body).results;
-      const count = films.filter((film) => film.characters.includes(characterId)).length;
+      let count = 0;
+
+      // Iterate through the films and check if Wedge Antilles is present in any of them
+      films.forEach((film) => {
+        const characters = film.characters;
+        if (characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)) {
+          count++;
+        }
+      });
+
       console.log(count);
     } else {
       console.error(`Request failed with status code: ${response.statusCode}`);
