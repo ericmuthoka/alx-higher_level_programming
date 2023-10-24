@@ -18,7 +18,7 @@ request.get(apiUrl, (error, response, body) => {
   } else {
     if (response.statusCode === 200) {
       const movie = JSON.parse(body);
-      const characterUrls = movie.characters;
+      const characterUrls = movie.characters.sort();
 
       // Fetch and print the names of characters in order
       characterUrls.forEach((characterUrl) => {
